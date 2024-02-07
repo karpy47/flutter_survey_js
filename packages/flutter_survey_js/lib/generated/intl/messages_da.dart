@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a da locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,19 +18,19 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'da';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "add": MessageLookupByLibrary.simpleMessage("Add"),
-        "nextPage": MessageLookupByLibrary.simpleMessage("Next Page"),
-        "noneItemText": MessageLookupByLibrary.simpleMessage("None"),
+        "add": MessageLookupByLibrary.simpleMessage("Tilføj"),
+        "nextPage": MessageLookupByLibrary.simpleMessage("Næste side"),
+        "noneItemText": MessageLookupByLibrary.simpleMessage("Ingen"),
         "otherItemText":
-            MessageLookupByLibrary.simpleMessage("Other (describe)"),
-        "placeholder": MessageLookupByLibrary.simpleMessage("Select..."),
-        "previousPage": MessageLookupByLibrary.simpleMessage("Previous Page"),
-        "remove": MessageLookupByLibrary.simpleMessage("Remove"),
-        "selectAllText": MessageLookupByLibrary.simpleMessage("Select All"),
-        "submitSurvey": MessageLookupByLibrary.simpleMessage("Submit")
+            MessageLookupByLibrary.simpleMessage("Andet (beskriv)"),
+        "placeholder": MessageLookupByLibrary.simpleMessage("Vælg..."),
+        "previousPage": MessageLookupByLibrary.simpleMessage("Forrige side"),
+        "remove": MessageLookupByLibrary.simpleMessage("Fjern"),
+        "selectAllText": MessageLookupByLibrary.simpleMessage("Vælg alle"),
+        "submitSurvey": MessageLookupByLibrary.simpleMessage("Send")
       };
 }

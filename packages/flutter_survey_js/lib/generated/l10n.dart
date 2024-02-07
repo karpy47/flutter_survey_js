@@ -19,7 +19,7 @@ class S {
 
   static S get current {
     assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
@@ -42,7 +42,7 @@ class S {
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
     assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -60,10 +60,10 @@ class S {
     );
   }
 
-  /// `PreviousPage`
+  /// `Previous Page`
   String get previousPage {
     return Intl.message(
-      'PreviousPage',
+      'Previous Page',
       name: 'previousPage',
       desc: '',
       args: [],
@@ -147,7 +147,9 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'da'),
       Locale.fromSubtags(languageCode: 'fr'),
+      Locale.fromSubtags(languageCode: 'sv'),
       Locale.fromSubtags(languageCode: 'zh'),
     ];
   }
