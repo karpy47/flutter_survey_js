@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(n) => "At least ${n} chars required";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add": MessageLookupByLibrary.simpleMessage("Add"),
@@ -31,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "previousPage": MessageLookupByLibrary.simpleMessage("Previous Page"),
         "remove": MessageLookupByLibrary.simpleMessage("Remove"),
         "selectAllText": MessageLookupByLibrary.simpleMessage("Select All"),
-        "submitSurvey": MessageLookupByLibrary.simpleMessage("Submit")
+        "submitSurvey": MessageLookupByLibrary.simpleMessage("Submit"),
+        "valMinLength": m0,
+        "valRequired": MessageLookupByLibrary.simpleMessage("Required field")
       };
 }

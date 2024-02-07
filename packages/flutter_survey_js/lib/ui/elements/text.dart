@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_survey_js/ui/reactive/reactive.dart';
 import 'package:flutter_survey_js/ui/reactive/reactive_color_picker.dart';
 import 'package:flutter_survey_js/ui/reactive/reactive_date_time_picker.dart';
+import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:flutter_survey_js/ui/survey_configuration.dart';
 import 'package:flutter_survey_js_model/flutter_survey_js_model.dart' as s;
 import 'package:reactive_forms/reactive_forms.dart';
@@ -14,6 +15,7 @@ Widget textBuilder(BuildContext context, s.Elementbase element,
   final String? hintText = e.placeholder?.getLocalizedText(context);
   Widget widget = ReactiveTextField(
     formControlName: element.name!,
+    validationMessages: ValidationMessages.all(context),
     decoration: InputDecoration(hintText: hintText),
   );
 
@@ -25,14 +27,19 @@ Widget textBuilder(BuildContext context, s.Elementbase element,
       decoration: InputDecoration(hintText: hintText),
       firstDate: e.min.tryCastToDateTime(),
       lastDate: e.max.tryCastToDateTime(),
+      validationMessages: ValidationMessages.all(context),
     );
   }
   if (e.inputType == s.TextInputType.color) {
-    widget = ReactiveColorPicker(formControlName: element.name!);
+    widget = ReactiveColorPicker(
+      formControlName: element.name!,
+      validationMessages: ValidationMessages.all(context),
+    );
   }
   if (e.inputType == s.TextInputType.email) {
     widget = ReactiveTextField(
       formControlName: element.name!,
+      validationMessages: ValidationMessages.all(context),
       decoration: InputDecoration(hintText: hintText),
     );
   }
@@ -41,6 +48,7 @@ Widget textBuilder(BuildContext context, s.Elementbase element,
       locale: Localizations.localeOf(context),
       formControlName: element.name!,
       type: ReactiveDatePickerFieldType.dateTime,
+      validationMessages: ValidationMessages.all(context),
       decoration: InputDecoration(hintText: hintText),
     );
   }
@@ -52,6 +60,7 @@ Widget textBuilder(BuildContext context, s.Elementbase element,
     widget = ReactiveTextField(
       obscureText: true,
       formControlName: element.name!,
+      validationMessages: ValidationMessages.all(context),
       decoration: InputDecoration(hintText: hintText),
     );
   }
@@ -62,6 +71,7 @@ Widget textBuilder(BuildContext context, s.Elementbase element,
     widget = ReactiveTextField(
       keyboardType: TextInputType.phone,
       formControlName: element.name!,
+      validationMessages: ValidationMessages.all(context),
       decoration: InputDecoration(hintText: hintText),
     );
   }
@@ -70,6 +80,7 @@ Widget textBuilder(BuildContext context, s.Elementbase element,
       locale: Localizations.localeOf(context),
       formControlName: element.name!,
       type: ReactiveDatePickerFieldType.time,
+      validationMessages: ValidationMessages.all(context),
       decoration: InputDecoration(hintText: hintText),
     );
   }
@@ -85,6 +96,7 @@ Widget textBuilder(BuildContext context, s.Elementbase element,
       keyboardType: TextInputType.number,
       formControlName: element.name!,
       valueAccessor: NumStringValueAccessor(),
+      validationMessages: ValidationMessages.all(context),
       decoration: InputDecoration(hintText: hintText),
     );
   }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:flutter_survey_js/ui/survey_configuration.dart';
 import 'package:flutter_survey_js_model/flutter_survey_js_model.dart' as s;
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:reactive_segmented_control/reactive_segmented_control.dart';
 import 'package:flutter_survey_js/utils.dart';
+
 Widget ratingBuilder(BuildContext context, s.Elementbase element, {ElementConfiguration? configuration}) {
   final e = element as s.Rating;
 
@@ -46,6 +48,7 @@ Widget ratingBuilder(BuildContext context, s.Elementbase element, {ElementConfig
     formControlName: element.name!,
     builder: (context, control, child) {
       return ReactiveSegmentedControl<int, int>(
+        validationMessages: ValidationMessages.all(context),
         formControlName: element.name!,
         children: getChildren(selectedValue: control.value),
       ).wrapQuestionTitle(context, element, configuration: configuration);

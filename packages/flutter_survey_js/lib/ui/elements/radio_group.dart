@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_survey_js/ui/elements/selectbase.dart';
+import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:flutter_survey_js/ui/survey_configuration.dart';
 import 'package:flutter_survey_js_model/flutter_survey_js_model.dart' as s;
 import 'package:flutter_survey_js/ui/reactive/reactive_group_button.dart';
@@ -120,6 +121,7 @@ class _RadioGroupWidgetState extends State<_RadioGroupWidget> {
             isRadio: true,
             formControlName: e.name!,
             buttons: elementItems,
+            validationMessages: ValidationMessages.all(context),
             onChanged: (control) {
               if (widget.element.showOtherItem ?? false) {
                 if (selectbaseController.storeOtherAsComment) {

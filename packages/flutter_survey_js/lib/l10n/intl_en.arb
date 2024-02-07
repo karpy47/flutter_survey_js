@@ -7,5 +7,12 @@
   "placeholder": "Select...",
   "otherItemText": "Other (describe)",
   "noneItemText": "None",
-  "selectAllText": "Select All"
+  "selectAllText": "Select All",
+  "valRequired": "Required field",
+  "valMinLength": "At least {n} chars required",
+  "@valMinLength": {
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  }
 }

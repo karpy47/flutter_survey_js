@@ -20,17 +20,21 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'sv';
 
+  static String m0(n) => "Minst ${n} tecken krävs";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add": MessageLookupByLibrary.simpleMessage("Lägg till"),
         "nextPage": MessageLookupByLibrary.simpleMessage("Nästa sida"),
         "noneItemText": MessageLookupByLibrary.simpleMessage("Ingen"),
         "otherItemText":
-            MessageLookupByLibrary.simpleMessage("Övrig (beskriv)"),
+            MessageLookupByLibrary.simpleMessage("Annat (beskriv)"),
         "placeholder": MessageLookupByLibrary.simpleMessage("Välj..."),
         "previousPage": MessageLookupByLibrary.simpleMessage("Föregående sida"),
         "remove": MessageLookupByLibrary.simpleMessage("Ta bort"),
         "selectAllText": MessageLookupByLibrary.simpleMessage("Välj alla"),
-        "submitSurvey": MessageLookupByLibrary.simpleMessage("Skicka")
+        "submitSurvey": MessageLookupByLibrary.simpleMessage("Skicka"),
+        "valMinLength": m0,
+        "valRequired": MessageLookupByLibrary.simpleMessage("Måste vara ifyllt")
       };
 }

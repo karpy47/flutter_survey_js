@@ -1,6 +1,7 @@
 import 'package:built_value/json_object.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_survey_js/ui/elements/selectbase.dart';
+import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:flutter_survey_js/ui/survey_configuration.dart';
 import 'package:flutter_survey_js_model/flutter_survey_js_model.dart' as s;
 import 'package:reactive_forms/reactive_forms.dart';
@@ -140,6 +141,7 @@ class _DropdownWidgetState extends State<_DropdownWidget> {
           formControlName: e.name!,
           hint: Text(e.placeholder?.getLocalizedText(context) ??
               S.of(context).placeholder),
+          validationMessages: ValidationMessages.all(context),
           onChanged: (control) {
             if (widget.dropdown.showOtherItem ?? false) {
               if (selectbaseController.storeOtherAsComment) {

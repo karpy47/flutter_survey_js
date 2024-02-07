@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_survey_js/ui/reactive/reactive_grid_item_picker.dart';
+import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:flutter_survey_js_model/flutter_survey_js_model.dart' as s;
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:flutter_survey_js/ui/survey_configuration.dart';
 import 'image.dart';
 import 'package:flutter_survey_js/utils.dart';
+
 Widget imagePickerBuilder(BuildContext context, s.Elementbase element,
     {ElementConfiguration? configuration}) {
   return ImagePickerElement(
@@ -33,6 +35,7 @@ class ImagePickerElement extends StatelessWidget {
       formControlName: formControlName,
       valueAccessor: _ValueAccessor(choices),
       items: choices,
+      validationMessages: ValidationMessages.all(context),
       builder: (s.Imageitemvalue item, bool isCurrentItem,
           void Function() changeItem) {
         Color? foregroundColor;

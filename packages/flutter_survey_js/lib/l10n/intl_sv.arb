@@ -1,11 +1,20 @@
 {
+  "@@locale": "sv",
+
   "nextPage": "Nästa sida",
   "previousPage": "Föregående sida",
   "submitSurvey": "Skicka",
   "add": "Lägg till",
   "remove": "Ta bort",
   "placeholder": "Välj...",
-  "otherItemText": "Övrig (beskriv)",
+  "otherItemText": "Annat (beskriv)",
   "noneItemText": "Ingen",
-  "selectAllText": "Välj alla"
+  "selectAllText": "Välj alla",
+  "valRequired": "Måste vara ifyllt",
+  "valMinLength": "Minst {n} tecken krävs",
+  "@valMinLength": {
+    "placeholders": {
+      "n": { "type": "int" }
+    }
+  }
 }

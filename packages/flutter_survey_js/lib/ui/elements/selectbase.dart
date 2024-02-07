@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_survey_js/generated/l10n.dart';
+import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:flutter_survey_js_model/flutter_survey_js_model.dart' as s;
 import 'package:flutter_survey_js/utils.dart';
@@ -43,6 +44,7 @@ class SelectbaseWidgetState extends State<SelectbaseWidget> {
                         formControlName: controller.getCommentName(),
                         maxLines: null,
                         keyboardType: TextInputType.multiline,
+                        validationMessages: ValidationMessages.all(context),
                         onChanged: (control) {
                           widget.otherValueChanged
                               ?.call(control.value?.toString() ?? "");
@@ -69,6 +71,7 @@ class SelectbaseWidgetState extends State<SelectbaseWidget> {
                 ReactiveTextField<dynamic>(
                   formControlName: controller.getCommentName(),
                   maxLines: null,
+                  validationMessages: ValidationMessages.all(context),
                   keyboardType: TextInputType.multiline,
                   decoration: InputDecoration(
                       border: const OutlineInputBorder(),
