@@ -11,11 +11,20 @@ class _$Locstring extends Locstring {
   final String? default_;
   @override
   final String? en;
+  @override
+  final String? fr;
+  @override
+  final String? zh;
+  @override
+  final String? sv;
+  @override
+  final String? da;
 
   factory _$Locstring([void Function(LocstringBuilder)? updates]) =>
       (new LocstringBuilder()..update(updates))._build();
 
-  _$Locstring._({this.default_, this.en}) : super._();
+  _$Locstring._({this.default_, this.en, this.fr, this.zh, this.sv, this.da})
+      : super._();
 
   @override
   Locstring rebuild(void Function(LocstringBuilder) updates) =>
@@ -27,7 +36,13 @@ class _$Locstring extends Locstring {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Locstring && default_ == other.default_ && en == other.en;
+    return other is Locstring &&
+        default_ == other.default_ &&
+        en == other.en &&
+        fr == other.fr &&
+        zh == other.zh &&
+        sv == other.sv &&
+        da == other.da;
   }
 
   @override
@@ -35,6 +50,10 @@ class _$Locstring extends Locstring {
     var _$hash = 0;
     _$hash = $jc(_$hash, default_.hashCode);
     _$hash = $jc(_$hash, en.hashCode);
+    _$hash = $jc(_$hash, fr.hashCode);
+    _$hash = $jc(_$hash, zh.hashCode);
+    _$hash = $jc(_$hash, sv.hashCode);
+    _$hash = $jc(_$hash, da.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -43,7 +62,11 @@ class _$Locstring extends Locstring {
   String toString() {
     return (newBuiltValueToStringHelper(r'Locstring')
           ..add('default_', default_)
-          ..add('en', en))
+          ..add('en', en)
+          ..add('fr', fr)
+          ..add('zh', zh)
+          ..add('sv', sv)
+          ..add('da', da))
         .toString();
   }
 }
@@ -59,6 +82,22 @@ class LocstringBuilder implements Builder<Locstring, LocstringBuilder> {
   String? get en => _$this._en;
   set en(String? en) => _$this._en = en;
 
+  String? _fr;
+  String? get fr => _$this._fr;
+  set fr(String? fr) => _$this._fr = fr;
+
+  String? _zh;
+  String? get zh => _$this._zh;
+  set zh(String? zh) => _$this._zh = zh;
+
+  String? _sv;
+  String? get sv => _$this._sv;
+  set sv(String? sv) => _$this._sv = sv;
+
+  String? _da;
+  String? get da => _$this._da;
+  set da(String? da) => _$this._da = da;
+
   LocstringBuilder() {
     Locstring._defaults(this);
   }
@@ -68,6 +107,10 @@ class LocstringBuilder implements Builder<Locstring, LocstringBuilder> {
     if ($v != null) {
       _default_ = $v.default_;
       _en = $v.en;
+      _fr = $v.fr;
+      _zh = $v.zh;
+      _sv = $v.sv;
+      _da = $v.da;
       _$v = null;
     }
     return this;
@@ -88,7 +131,9 @@ class LocstringBuilder implements Builder<Locstring, LocstringBuilder> {
   Locstring build() => _build();
 
   _$Locstring _build() {
-    final _$result = _$v ?? new _$Locstring._(default_: default_, en: en);
+    final _$result = _$v ??
+        new _$Locstring._(
+            default_: default_, en: en, fr: fr, zh: zh, sv: sv, da: da);
     replace(_$result);
     return _$result;
   }

@@ -12,7 +12,11 @@ part 'locstring.g.dart';
 ///
 /// Properties:
 /// * [default_] 
-/// * [en] 
+/// * [en]
+/// * [fr]
+/// * [zh]
+/// * [sv]
+/// * [da]
 @BuiltValue()
 abstract class Locstring implements Built<Locstring, LocstringBuilder> {
   @BuiltValueField(wireName: r'default')
@@ -20,6 +24,18 @@ abstract class Locstring implements Built<Locstring, LocstringBuilder> {
 
   @BuiltValueField(wireName: r'en')
   String? get en;
+
+  @BuiltValueField(wireName: r'fr')
+  String? get fr;
+
+  @BuiltValueField(wireName: r'zh')
+  String? get zh;
+
+  @BuiltValueField(wireName: r'sv')
+  String? get sv;
+
+  @BuiltValueField(wireName: r'da')
+  String? get da;
 
   Locstring._();
 
@@ -46,17 +62,27 @@ class _$LocstringSerializer implements PrimitiveSerializer<Locstring> {
   }) sync* {
     if (object.default_ != null) {
       yield r'default';
-      yield serializers.serialize(
-        object.default_,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize(object.default_, specifiedType: const FullType(String));
     }
     if (object.en != null) {
       yield r'en';
-      yield serializers.serialize(
-        object.en,
-        specifiedType: const FullType(String),
-      );
+      yield serializers.serialize( object.en, specifiedType: const FullType(String));
+    }
+    if (object.fr != null) {
+      yield r'fr';
+      yield serializers.serialize(object.fr, specifiedType: const FullType(String));
+    }
+    if (object.zh != null) {
+      yield r'zh';
+      yield serializers.serialize( object.zh, specifiedType: const FullType(String));
+    }
+    if (object.sv != null) {
+      yield r'sv';
+      yield serializers.serialize( object.sv, specifiedType: const FullType(String));
+    }
+    if (object.da != null) {
+      yield r'da';
+      yield serializers.serialize(object.da, specifiedType: const FullType(String));
     }
   }
 
@@ -82,18 +108,28 @@ class _$LocstringSerializer implements PrimitiveSerializer<Locstring> {
       final value = serializedList[i + 1];
       switch (key) {
         case r'default':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           result.default_ = valueDes;
           break;
         case r'en':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
+          final valueDes = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           result.en = valueDes;
+          break;
+        case r'fr':
+          final valueDes = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.fr = valueDes;
+          break;
+        case r'zh':
+          final valueDes = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.zh = valueDes;
+          break;
+        case r'sv':
+          final valueDes = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.sv = valueDes;
+          break;
+        case r'da':
+          final valueDes = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.da = valueDes;
           break;
         default:
           unhandled.add(key);

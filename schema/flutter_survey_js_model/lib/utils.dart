@@ -160,15 +160,14 @@ extension SurveyTitleExtesion on SurveyTitle {
     }
     if (oneOf.isType(Locstring)) {
       final obj = (oneOf.value as Locstring);
-      String? ret;
       switch (locale) {
-        case "en":
-          ret = obj.en;
-          break;
-        default:
-          ret = obj.default_;
+        case "en": return obj.en;
+        case "fr": return obj.fr;
+        case "zh": return obj.zh;
+        case "sv": return obj.sv;
+        case "da": return obj.da;
+        default: return obj.default_;
       }
-      return ret;
     }
     return null;
   }
