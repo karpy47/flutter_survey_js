@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_survey_js/ui/element_node_lookup.dart';
 import 'package:flutter_survey_js/ui/elements/selectbase.dart';
 import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:flutter_survey_js/ui/survey_configuration.dart';
@@ -30,13 +31,14 @@ class _RadioGroupWidget<T> extends StatefulWidget {
 }
 
 class _RadioGroupWidgetState extends State<_RadioGroupWidget> {
+  var lookup = ElementNodeLookup();
+
   AbstractControl getCurrentControl() {
     return ((ReactiveForm.of(context, listen: false) as FormControlCollection)
         .control(widget.element.name!));
   }
 
-  List<s.Itemvalue> get choices =>
-      widget.element.choices?.map((p0) => p0.castToItemvalue()).toList() ?? [];
+  List<s.Itemvalue> get choices => lookup.getChoicesAsList(widget.element);
 
   bool isOtherValue(Object? value) {
     if (widget.element.showNoneItem ?? false) {

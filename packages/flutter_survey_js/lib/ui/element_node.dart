@@ -1,3 +1,4 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_survey_js/flutter_survey_js.dart' as s;
 import 'package:flutter_survey_js/ui/elements/matrix_dropdown_base.dart';
@@ -49,7 +50,7 @@ class ElementNode {
 
   final Object? rawElement;
 
-  final s.Elementbase? element;
+  s.Elementbase? element;
 
   AbstractControl? control;
 
@@ -473,7 +474,7 @@ class QuestionPanelDynamicVar {
 void constructElementNode(BuildContext context, ElementNode node,
     {List<ValidatorFunction> validators = const [],
     List<AsyncValidatorFunction> asyncValidators = const [],
-    Object? value}) {
+    Object? value }) {
   if (node.isRootSurvey) {
     final survey = node.survey;
     final pages = (survey.pages?.toList() ?? []);

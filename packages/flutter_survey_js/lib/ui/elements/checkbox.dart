@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_survey_js/flutter_survey_js.dart' hide Text;
+import 'package:flutter_survey_js/ui/element_node_lookup.dart';
 import 'package:flutter_survey_js/ui/elements/selectbase.dart';
 import 'package:flutter_survey_js/ui/form_control.dart';
 import 'package:flutter_survey_js/ui/reactive/reactive_wrap_form_array.dart';
@@ -47,10 +48,10 @@ class CheckBoxElement extends StatefulWidget {
 }
 
 class _CheckBoxElementState extends State<CheckBoxElement> {
+  var lookup = ElementNodeLookup();
   late SelectbaseController otherController;
 
-  List<Itemvalue> get choices =>
-      widget.element.choices?.map((p0) => p0.castToItemvalue()).toList() ?? [];
+  List<Itemvalue> get choices => lookup.getChoicesAsList(widget.element);
 
   void resetOtherItem(FormArray<Object?> formArray) {
     Future.microtask(() {

@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_survey_js/flutter_survey_js.dart';
+import 'package:flutter_survey_js/ui/element_node_lookup.dart';
 import 'package:flutter_survey_js_model/flutter_survey_js_model.dart' as s;
 import 'package:logging/logging.dart';
 import 'package:reactive_forms/reactive_forms.dart';
@@ -55,6 +56,8 @@ class SurveyWidgetState extends State<SurveyWidget> {
   late ElementNode rootNode;
 
   FormGroup get formGroup => rootNode.control as FormGroup;
+
+  var lookup = ElementNodeLookup();
 
   @override
   void initState() {
@@ -116,6 +119,7 @@ class SurveyWidgetState extends State<SurveyWidget> {
         isRootSurvey: true);
 
     constructElementNode(context, rootNode);
+    lookup.buildReferences(rootNode);
 
     _listener = formGroup.valueChanges.listen((event) {
       rerunExpression(event ?? {});

@@ -1,5 +1,6 @@
 import 'package:built_value/json_object.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_survey_js/ui/element_node_lookup.dart';
 import 'package:flutter_survey_js/ui/elements/selectbase.dart';
 import 'package:flutter_survey_js/ui/reactive/validation_messages.dart';
 import 'package:flutter_survey_js/ui/survey_configuration.dart';
@@ -30,6 +31,8 @@ class _DropdownWidget<T> extends StatefulWidget {
 }
 
 class _DropdownWidgetState extends State<_DropdownWidget> {
+  var lookup = ElementNodeLookup();
+
   AbstractControl getCurrentControl() {
     return ((ReactiveForm.of(context, listen: false) as FormControlCollection)
         .control(widget.dropdown.name!));
@@ -73,10 +76,7 @@ class _DropdownWidgetState extends State<_DropdownWidget> {
         return b.build();
       });
     } else {
-      return widget.dropdown.choices
-              ?.map((p0) => p0.castToItemvalue())
-              .toList() ??
-          [];
+      return lookup.getChoicesAsList(widget.dropdown);
     }
   }
 
