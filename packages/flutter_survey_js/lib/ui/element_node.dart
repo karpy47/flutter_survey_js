@@ -1,4 +1,3 @@
-import 'package:built_collection/built_collection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_survey_js/flutter_survey_js.dart' as s;
 import 'package:flutter_survey_js/ui/elements/matrix_dropdown_base.dart';
@@ -50,7 +49,7 @@ class ElementNode {
 
   final Object? rawElement;
 
-  s.Elementbase? element;
+  final s.Elementbase? element;
 
   AbstractControl? control;
 
